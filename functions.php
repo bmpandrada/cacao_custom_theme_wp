@@ -198,6 +198,6 @@
       'footerMenu' => 'Footer Menu',
     ]);
   }
-  add_action('after_setup_theme', 'cacao_theme_setup');
+  add_action('after_setup_theme', 'cacao_theme_setup', 0);
 
-  // add_filter('woocommerce_enqueue_styles', '__return_false');
+  require get_template_directory() . '/inc/wc-modification.php';
