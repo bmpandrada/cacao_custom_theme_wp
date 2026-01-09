@@ -1,0 +1,20 @@
+.woocommerce div.product .woocommerce-tabs ul.tabs {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 24px;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+  border: none;
+  margin-right: 30px;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+  font-weight: 600;
+  color: #666;
+  padding-bottom: 10px;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a {
+  color: #4b2e2b;
+  // border-bottom: 2px solid #c89b63;
+}

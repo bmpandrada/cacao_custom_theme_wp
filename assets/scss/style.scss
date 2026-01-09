@@ -1,4 +1,10 @@
 /******* Bootstrap Theming ********/
+// WooCommerce
+@import "./woocommerce/_grid.scss";
+@import "./woocommerce/_buttons.scss";
+@import "./woocommerce/_product.scss";
+@import "./woocommerce/_forms.scss";
+@import "./woocommerce/_tab.scss";
 
 $primary: #da9f5b;
 $secondary: #33211d;
@@ -232,8 +238,7 @@ h6,
 .page-header,
 .offer,
 .footer {
-  background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)),
-    url(../img/bg.jpg);
+  background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(../img/bg.jpg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -308,4 +313,30 @@ h6,
   .navbar-nav .menu-item-has-children:hover > .sub-menu {
     display: block;
   }
+}
+
+div#primary {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@media (max-width: 992px) {
+  body.woocommerce-page ul.products > li.product {
+    width: 100% !important;
+  }
+}
+
+.woocommerce-page {
+  #sidebar {
+    display: none;
+  }
+}
+
+// sorting
+
+form.woocommerce-ordering {
+  margin: 0 0 3rem 0;
+  text-align: end;
 }

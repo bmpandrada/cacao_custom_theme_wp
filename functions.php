@@ -64,8 +64,9 @@
       'cacao-style',
       get_theme_file_uri('/assets/css/style.css'),
       ['bootstrap-css'],
-      '1.0'
+      filemtime(get_theme_file_path('/assets/css/style.css'))
     );
+
 
     /* =========================
     * JQUERY (WordPress built-in)
@@ -165,17 +166,17 @@
    */
   function cacao_theme_setup()
   {
-
-    // Title tag support
     add_theme_support('title-tag');
-
-    // Featured images
     add_theme_support('post-thumbnails');
 
-    // Menus
+    // WooCommerce support (REQUIRED)
+    add_theme_support('woocommerce');
+
     register_nav_menus([
       'headerMenu' => 'Header Menu',
       'footerMenu' => 'Footer Menu',
     ]);
   }
   add_action('after_setup_theme', 'cacao_theme_setup');
+
+  add_filter('woocommerce_enqueue_styles', '__return_false');
