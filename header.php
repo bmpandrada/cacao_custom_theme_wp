@@ -56,7 +56,7 @@
             <p class="m-0 text-white px-2">/</p>
           <?php endif; ?>
 
-          <p class="m-0 text-white"><?php single_post_title(); ?></p>
+          <p class="m-0 text-white"><?php single_post_title(); ?> </p>
         </div>
       </div>
     </div>

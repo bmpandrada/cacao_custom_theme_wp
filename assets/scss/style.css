@@ -9265,16 +9265,6 @@ h6,
   margin: 0 auto;
 }
 
-div#primary,
-div#sidebar,
-.wp-block-woocommerce-cart,
-.wp-block-woocommerce-checkout.alignwide.wc-block-checkout {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.75rem;
-}
-
 button.single_add_to_cart_button.button.alt,
 a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
   background-color: rgb(111, 57, 55);
@@ -9285,4 +9275,13 @@ button.single_add_to_cart_button.button.alt:hover,
 a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart:hover {
   background-color: white;
   color: rgb(111, 57, 55);
+}
+
+.size-auto,
+.size-full,
+.size-large,
+.size-medium,
+.size-thumbnail {
+  max-width: 100%;
+  height: auto;
 }/*# sourceMappingURL=style.css.map */
