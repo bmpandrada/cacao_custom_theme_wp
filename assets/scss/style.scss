@@ -1,10 +1,4 @@
 /******* Bootstrap Theming ********/
-// WooCommerce
-@import "./woocommerce/_grid.scss";
-@import "./woocommerce/_buttons.scss";
-@import "./woocommerce/_product.scss";
-@import "./woocommerce/_forms.scss";
-@import "./woocommerce/_tab.scss";
 
 $primary: #da9f5b;
 $secondary: #33211d;
@@ -315,28 +309,32 @@ h6,
   }
 }
 
-div#primary {
-  max-width: 1200px;
+.wp-block-woocommerce-checkout {
+  container-type: inline-size;
+  margin: 0;
+  padding-top: 24px;
   width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem;
 }
 
-@media (max-width: 992px) {
-  body.woocommerce-page ul.products > li.product {
-    width: 100% !important;
+div#primary,
+div#sidebar,
+.wp-block-woocommerce-cart,
+.wp-block-woocommerce-checkout.alignwide.wc-block-checkout {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem;
+}
+
+button.single_add_to_cart_button.button.alt,
+a.button.product_type_simple.add_to_cart_button.ajax_add_to_cart {
+  background-color: rgb(111 57 55);
+  color: white;
+  transition: all ease-in 0.3s;
+  &:hover {
+    background-color: white;
+    color: rgb(111 57 55);
   }
-}
-
-.woocommerce-page {
-  #sidebar {
-    display: none;
-  }
-}
-
-// sorting
-
-form.woocommerce-ordering {
-  margin: 0 0 3rem 0;
-  text-align: end;
 }

@@ -36,7 +36,12 @@
   </div>
   <!-- Navbar End -->
   <?php
-  if (!is_front_page()): ?>
+  if (
+    !is_front_page()
+
+  ):
+  ?>
+
     <!-- Page Header Start -->
     <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
       <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">

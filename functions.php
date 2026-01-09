@@ -179,4 +179,4 @@
   }
   add_action('after_setup_theme', 'cacao_theme_setup');
 
-  add_filter('woocommerce_enqueue_styles', '__return_false');
+  // add_filter('woocommerce_enqueue_styles', '__return_false');
