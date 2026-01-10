@@ -191,8 +191,6 @@
       $content_width = 600;
     }
 
-    // end of WooCommerce support 
-
     register_nav_menus([
       'headerMenu' => 'Header Menu',
       'footerMenu' => 'Footer Menu',
@@ -200,4 +198,6 @@
   }
   add_action('after_setup_theme', 'cacao_theme_setup', 0);
 
-  require get_template_directory() . '/inc/wc-modification.php';
+  if (class_exists('WooCommerce')) {
+    require get_template_directory() . '/inc/wc-modification.php';
+  }
