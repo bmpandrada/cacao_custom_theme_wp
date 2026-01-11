@@ -167,11 +167,42 @@
   require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 
+  function cacao_mobile_logo_customizer($wp_customize)
+  {
+
+    $wp_customize->add_setting('mobile_logo', [
+      'default' => '',
+      'sanitize_callback' => 'esc_url_raw'
+    ]);
+
+    $wp_customize->add_control(
+      new WP_Customize_Image_Control(
+        $wp_customize,
+        'mobile_logo',
+        [
+          'label'   => 'Mobile Logo',
+          'section' => 'title_tagline', // Site Identity
+          'settings' => 'mobile_logo',
+        ]
+      )
+    );
+  }
+  add_action('customize_register', 'cacao_mobile_logo_customizer');
+
+
 
   function cacao_theme_setup()
   {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
+
+    //custom logo
+    add_theme_support('custom-logo', [
+      'height'      => 100,
+      'width'       => 300,
+      'flex-height' => true,
+      'flex-width'  => true,
+    ]);
 
     // WooCommerce support (REQUIRED)
     add_theme_support('woocommerce', array(

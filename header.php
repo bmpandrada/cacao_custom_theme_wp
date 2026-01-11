@@ -2,7 +2,6 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-  <title>KOPPEE - Coffee Shop HTML Template</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="<?php bloginfo('charset'); ?>">
   <?php wp_head() ?>
@@ -12,16 +11,26 @@
   <!-- Navbar Start -->
   <div class="container-fluid p-0 nav-bar">
     <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
-      <a href="index.html" class="navbar-brand px-lg-4 m-0">
-        <!-- <h1 class="m-0 display-4 text-uppercase text-white">CacaoDeLilio</h1> -->
-        <picture>
-          <source media="(max-width: 991px)"
-            srcset="<?php echo get_theme_file_uri('/assets/img/cacao_light-2.png'); ?>">
+      <a class="navbar-brand px-lg-4 m-0" href="<?php echo home_url('/'); ?>">
 
-          <img class="img-fluid" width="100" height="70"
-            src="<?php echo get_theme_file_uri('/assets/img/cacao_light.png'); ?>"
-            alt="Cacao Logo">
+        <picture>
+          <?php if (get_theme_mod('mobile_logo')) : ?>
+            <source media="(max-width: 991px)"
+              srcset="<?php echo esc_url(get_theme_mod('mobile_logo')); ?>">
+          <?php endif; ?>
+
+          <?php
+          if (has_custom_logo()) {
+            echo wp_get_attachment_image(
+              get_theme_mod('custom_logo'),
+              'full',
+              false,
+              ['class' => 'img-fluid custom-logo', 'alt' => get_bloginfo('name')]
+            );
+          }
+          ?>
         </picture>
+
 
       </a>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
