@@ -164,6 +164,10 @@
   /**
    * Theme setup
    */
+  require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+
+
+
   function cacao_theme_setup()
   {
     add_theme_support('title-tag');
@@ -178,8 +182,8 @@
         'min_rows' => 5,
         'max_rows' => 10,
         'default_columns' => 1,
-        'min_columns' => 2,
-        'max_columns' => 2,
+        'min_columns' => 1,
+        'max_columns' => 1,
       )
     ));
 

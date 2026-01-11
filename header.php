@@ -13,7 +13,16 @@
   <div class="container-fluid p-0 nav-bar">
     <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
       <a href="index.html" class="navbar-brand px-lg-4 m-0">
-        <h1 class="m-0 display-4 text-uppercase text-white">CacaoDeLilio</h1>
+        <!-- <h1 class="m-0 display-4 text-uppercase text-white">CacaoDeLilio</h1> -->
+        <picture>
+          <source media="(max-width: 991px)"
+            srcset="<?php echo get_theme_file_uri('/assets/img/cacao_light-2.png'); ?>">
+
+          <img class="img-fluid" width="100" height="70"
+            src="<?php echo get_theme_file_uri('/assets/img/cacao_light.png'); ?>"
+            alt="Cacao Logo">
+        </picture>
+
       </a>
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
@@ -24,10 +33,12 @@
 
         wp_nav_menu([
           'theme_location' => 'headerMenu',
-          'container'      => false,
-          'menu_class'     => 'navbar-nav ml-auto p-4',
-          'depth'          => 2
+          'container' => false,
+          'menu_class' => 'navbar-nav ml-auto p-4',
+          'depth' => 2,
+          'walker' => new WP_Bootstrap_Navwalker()
         ]);
+
 
 
         ?>
