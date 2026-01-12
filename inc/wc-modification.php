@@ -21,6 +21,11 @@ function cacao_modify_function()
   //remove sidebar
   remove_action("woocommerce_sidebar", "woocommerce_get_sidebar");
 
+  if (class_exists('WooCommerce')) {
+    remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+  }
+
+
 
   if (is_shop()) {
     // content shop

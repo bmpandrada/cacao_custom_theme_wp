@@ -9071,6 +9071,10 @@ h6,
   padding-right: 0;
 }
 
+.dropdown-menu:hover {
+  display: block;
+}
+
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active,
 .dropdown-menu {
@@ -9292,15 +9296,6 @@ h6,
   margin-top: 0;
 }
 
-.woocommerce ul.products li.product p {
-  color: #000;
-}
-
-.woocommerce ul.products li.product .price {
-  color: #000;
-  font-weight: 600;
-}
-
 .woocommerce ul.products li.product .price ins {
   font-size: 140%;
 }
@@ -9340,6 +9335,26 @@ h6,
   border-style: solid;
   border-width: 0 22px 24px 0;
   border-color: transparent transparent #c87f2a transparent;
+}
+
+.search-form .search-submit {
+  background-image: url("../img/search.svg");
+  height: 23px;
+  width: 23px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  text-indent: -9999px;
+  line-height: 1;
+  filter: invert(25%) sepia(90%) saturate(500%) hue-rotate(320deg);
+}
+.search-form input[type=search] {
+  background-color: #fff;
+  border-color: #c87f2a;
+  border-radius: 1rem;
+  padding: 0 0.45rem;
 }
 
 input#searchsubmit {

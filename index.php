@@ -9,7 +9,7 @@
     <?php endif; ?>
 
     <div class="col order-1 order-md-2 ">
-      <h2><?php the_title(); ?></h2>
+      <h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
       <p><?php the_content(); ?></p>
     </div>
 

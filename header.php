@@ -52,6 +52,11 @@
 
 
         ?>
+        <!-- <li class="menu-item cart-icon nav-item">
+          <a itemprop="url" href="<?php echo wc_get_cart_url() ?>" class="nav-link">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="items"><?php echo WC()->cart->get_cart_contents_count() ?></span>
+          </a>
+        </li> -->
       </div>
     </nav>
   </div>
@@ -61,7 +66,6 @@
   <?php
   if (
     !is_front_page()
-
   ):
   ?>
 
@@ -71,15 +75,23 @@
         <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase"><?php single_post_title() ?></h1>
         <div class="d-inline-flex mb-lg-5">
 
-          <?php
-          $home_id = get_option('page_on_front');
-          if ($home_id):
-          ?>
-            <p class="m-0 text-white"><a class="text-white" href="<?php echo esc_url(home_url('/')); ?>"><?php echo esc_html(get_the_title($home_id)); ?></a></p>
-            <p class="m-0 text-white px-2">/</p>
-          <?php endif; ?>
+          <div class="d-inline-flex mb-lg-5 text-white">
 
-          <p class="m-0 text-white"><?php if (is_shop()) : ?> shop <?php else: ?> <?php single_post_title(); ?> <?php endif; ?></p>
+            <?php
+            if (function_exists('woocommerce_breadcrumb')) {
+              woocommerce_breadcrumb([
+                'delimiter'   => ' / ',
+                'wrap_before' => '<p class="m-0 text-white">',
+                'wrap_after'  => '</p>',
+                'before'      => '<span class="text-white">',
+                'after'       => '</span>',
+              ]);
+            }
+            ?>
+
+          </div>
+
+
         </div>
       </div>
     </div>

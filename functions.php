@@ -236,3 +236,52 @@
   if (class_exists('WooCommerce')) {
     require get_template_directory() . '/inc/wc-modification.php';
   }
+
+  /**
+   * Show cart contents / total Ajax
+   */
+  add_filter('woocommerce_add_to_cart_fragments', 'cacao_woocommerce_header_add_to_cart_fragment');
+
+  function cacao_woocommerce_header_add_to_cart_fragment($fragments)
+  {
+    global $woocommerce;
+
+    ob_start();
+
+  ?>
+    <span class="items"><?php echo WC()->cart->get_cart_contents_count(); ?></span>
+  <?php
+    $fragments['span.items'] = ob_get_clean();
+    return $fragments;
+  }
+
+
+  // add action count page menu and account
+  function cacao_add_cart_count_to_menu($items, $args)
+  {
+    if ($args->theme_location === 'headerMenu' && class_exists('WooCommerce')) {
+      $count = WC()->cart->get_cart_contents_count();
+      $items = str_replace(
+        'Cart',
+        '<i class="fa fa-shopping-cart"></i> <span class="items">' . $count . '</span>',
+        $items
+      );
+    }
+    return $items;
+  }
+  add_filter('wp_nav_menu_items', 'cacao_add_cart_count_to_menu', 10, 2);
+
+
+  function cacao_replace_myaccount_icon($items, $args)
+  {
+    if ($args->theme_location === 'headerMenu') {
+      $items = str_replace(
+        'My account',
+        '<i class="fa fa-user"></i>',
+        $items
+      );
+    }
+    return $items;
+  }
+
+  add_filter('wp_nav_menu_items', 'cacao_replace_myaccount_icon', 11, 2);
