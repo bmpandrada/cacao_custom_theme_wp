@@ -9066,6 +9066,11 @@ h6,
   color: #fffbf2;
 }
 
+.dropdown-menu li {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active,
 .dropdown-menu {
@@ -9182,7 +9187,7 @@ h6,
 .page-header,
 .offer,
 .footer {
-  background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(../img/bg.jpg);
+  background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(../img/cal-1.jpg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -9218,6 +9223,19 @@ h6,
 }
 
 /* WooCommerce */
+.woocommerce .col2-set .col-1,
+.woocommerce .col2-set .col-2 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+@media all and (max-width: 767px) {
+  .woocommerce .col2-set .col-1,
+  .woocommerce .col2-set .col-2 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
 /* Shop */
 .shop-content {
   padding: 3rem 0;
@@ -9324,6 +9342,23 @@ h6,
   border-color: transparent transparent #c87f2a transparent;
 }
 
+input#searchsubmit {
+  background: rgb(111, 57, 55);
+  color: #ffffff;
+  transition: all ease-in 0.3s;
+  border: none;
+  border-radius: 0.2rem;
+  margin-top: 0.25rem;
+}
+
+.sidebar-shop ul {
+  list-style: none;
+  padding-left: 0;
+}
+.sidebar-shop ul li::marker {
+  display: none;
+}
+
 .woocommerce ul.products li.product .button {
   margin-top: 0;
   background: rgb(111, 57, 55);
@@ -9354,6 +9389,25 @@ h6,
 .woocommerce nav.woocommerce-pagination ul li a,
 .woocommerce nav.woocommerce-pagination ul li span {
   padding: 12px;
+}
+
+.woocommerce form .form-row,
+.woocommerce-page form .form-row {
+  flex-direction: column;
+}
+
+.wc-blocks-components-select .wc-blocks-components-select__container {
+  margin-top: 12px;
+}
+
+.woocommerce .woocommerce-form-login .woocommerce-form-login__submit {
+  float: left;
+  margin-right: 0;
+  background: rgb(111, 57, 55);
+  color: #ffffff;
+}
+.woocommerce .woocommerce-form-login .woocommerce-form-login__submit:hover {
+  background-color: #c87f2a;
 }
 
 .navbar-brand img {

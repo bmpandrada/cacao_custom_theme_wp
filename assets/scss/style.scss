@@ -118,6 +118,11 @@ h6,
   color: $light;
 }
 
+.dropdown-menu li {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active,
 .dropdown-menu {
@@ -234,7 +239,7 @@ h6,
 .page-header,
 .offer,
 .footer {
-  background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(../img/bg.jpg);
+  background: linear-gradient(rgba(51, 33, 29, 0.9), rgba(51, 33, 29, 0.9)), url(../img/cal-1.jpg);
   background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
@@ -271,8 +276,25 @@ h6,
 }
 
 /* WooCommerce */
+.woocommerce .col2-set .col-1,
+.woocommerce .col2-set .col-2 {
+  flex: 0 0 50%;
+  max-width: 50%;
+
+  @media all and (max-width: 767px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
 
 /* Shop */
+
+// @media only screen and (max-width: 768px) {
+//   .woocommerce ul.products[class*="columns-"] li.product,
+//   .woocommerce-page ul.products[class*="columns-"] li.product {
+//     width: 100%;
+//   }
+// }
 
 .shop-content {
   padding: 3rem 0;
@@ -379,6 +401,25 @@ h6,
   border-color: transparent transparent #c87f2a transparent;
 }
 
+//sidebar
+input#searchsubmit {
+  background: rgb(111, 57, 55);
+  color: #ffffff;
+  transition: all ease-in 0.3s;
+  border: none;
+  border-radius: 0.2rem;
+  margin-top: 0.25rem;
+}
+.sidebar-shop {
+  ul {
+    list-style: none;
+    padding-left: 0;
+    li::marker {
+      display: none;
+    }
+  }
+}
+
 //button
 .woocommerce ul.products li.product .button {
   margin-top: 0;
@@ -412,8 +453,28 @@ h6,
   padding: 12px;
 }
 
-//nav
+//wc form
+.woocommerce form .form-row,
+.woocommerce-page form .form-row {
+  flex-direction: column;
+}
 
+.wc-blocks-components-select .wc-blocks-components-select__container {
+  margin-top: 12px;
+}
+
+//account
+.woocommerce .woocommerce-form-login .woocommerce-form-login__submit {
+  float: left;
+  margin-right: 0;
+  background: rgb(111 57 55);
+  color: #ffffff;
+  &:hover {
+    background-color: #c87f2a;
+  }
+}
+
+//nav
 .navbar-brand img {
   max-width: 80px;
   @media (min-width: 992px) {
