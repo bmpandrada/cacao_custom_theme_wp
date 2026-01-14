@@ -165,11 +165,11 @@
    * Theme setup
    */
   require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
+  require_once get_template_directory() . './inc/customizer.php';
 
 
   function cacao_mobile_logo_customizer($wp_customize)
   {
-
     $wp_customize->add_setting('mobile_logo', [
       'default' => '',
       'sanitize_callback' => 'esc_url_raw'
@@ -187,6 +187,7 @@
       )
     );
   }
+
   add_action('customize_register', 'cacao_mobile_logo_customizer');
 
 
@@ -198,8 +199,8 @@
 
     //custom logo
     add_theme_support('custom-logo', [
-      'height'      => 100,
-      'width'       => 300,
+      'height'      => 85,
+      'width'       => 160,
       'flex-height' => true,
       'flex-width'  => true,
     ]);

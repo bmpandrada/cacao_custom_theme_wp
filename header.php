@@ -48,15 +48,8 @@
           'depth' => 2,
           'walker' => new WP_Bootstrap_Navwalker()
         ]);
-
-
-
         ?>
-        <!-- <li class="menu-item cart-icon nav-item">
-          <a itemprop="url" href="<?php echo wc_get_cart_url() ?>" class="nav-link">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="items"><?php echo WC()->cart->get_cart_contents_count() ?></span>
-          </a>
-        </li> -->
+
       </div>
     </nav>
   </div>

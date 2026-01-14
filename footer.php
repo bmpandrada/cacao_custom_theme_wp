@@ -41,8 +41,8 @@
       </div>
       <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
         <p class="mb-2 text-white">
-          &copy; <?php echo wp_date('Y'); ?>
-          <a class="font-weight-bold" href="https://friendly-dev-ten.vercel.app/" rel="noopener noreferrer" target="_blank">BMPA</a>.
+
+          <?php echo get_theme_mod('set_cacao', '© 2024 Cacao Theme. All Rights Reserved.'); ?>
           All Rights Reserved.
         </p>
       </div>
